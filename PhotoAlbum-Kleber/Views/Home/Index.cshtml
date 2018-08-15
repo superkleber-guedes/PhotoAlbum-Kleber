@@ -1,6 +1,30 @@
-﻿@{
-    ViewData["Title"] = "Home Page";
+﻿@using BusinessLayer.ViewModels
+@model List<PhotoAlbum>
+@{
+    ViewData["Title"] = "Photo List";
 }
 <div class="row">
-    
+    <h1>Colourful Photo Album</h1>
+    <br />
+    <input type="text" id="txtSearch" class="form-control searchBox" placeholder="<Type here to search>" />
+    <br/>
+    <table id="photoTable" class="table table-bordered table-striped table-hover table-condensed">
+        <thead>
+            <tr>
+                <th>Photo title</th>
+                <th>Album Name</th>
+                <th>Image</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (PhotoAlbum photo in Model)
+            {
+                <tr id="line-@photo.PhotoId">
+                    <td class="text-right">@photo.PhotoTitle</td>
+                    <td>@photo.AlbumName</td>
+                    <td><a href="@photo.Url" target="_blank"><img src="@photo.ThumbnailUrl" class="img-responsive thumbnailImage" title="click for bigger image" /></a></td>
+                </tr>
+            }
+        </tbody>
+    </table>
 </div>

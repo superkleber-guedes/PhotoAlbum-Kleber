@@ -41,7 +41,7 @@ namespace Tests
 
             PhotoAlbums photoAlbums = new PhotoAlbums(albums.Object, photos.Object);
             var photoAlbumList = photoAlbums.BuildPhotoAlbumsList();
-            Assert.IsNotNull(photoAlbumList);   //failing!
+            Assert.IsNotNull(photoAlbumList);   
 
             Assert.IsTrue(photoAlbumList.Count == 5);
 

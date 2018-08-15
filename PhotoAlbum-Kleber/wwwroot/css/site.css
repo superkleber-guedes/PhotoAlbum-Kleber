@@ -33,3 +33,10 @@
         display: none;
     }
 }
+
+.thumbnailImage
+{
+    max-width: 35px;
+    cursor: pointer;
+}
+
