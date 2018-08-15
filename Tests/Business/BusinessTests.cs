@@ -49,7 +49,8 @@ namespace Tests
             Assert.IsTrue(photoAlbumList.Where(a => a.AlbumId == 2).ToList().Count == 2);
             Assert.IsTrue(photoAlbumList.Where(a => a.AlbumId == 3).ToList().Count == 1);
             Assert.IsTrue(photoAlbumList.FirstOrDefault(a => a.PhotoId == 1).PhotoTitle == "Photo 1 - Album 1");
-            
+            Assert.IsTrue(photoAlbumList.FirstOrDefault(a => a.PhotoId == 1).AlbumName == "Mock 1");
+
         }
 
         [TestMethod]
