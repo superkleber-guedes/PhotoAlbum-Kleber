@@ -2,6 +2,9 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Autofac;
+using BusinessLayer.Business;
+using BusinessLayer.Interfaces;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
@@ -22,6 +25,12 @@ namespace PhotoAlbum_Kleber
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddMvc();
+
+            //quick dependency injection here!
+            var builder = new ContainerBuilder();
+            builder.RegisterType<Albums>().As<IAlbums>().InstancePerRequest();
+            builder.RegisterType<Photos>().As<IPhotos>().InstancePerRequest();
+            builder.RegisterType<PhotoAlbums>().As<IPhotoAlbums>().InstancePerRequest();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
