@@ -6,11 +6,13 @@ using System.Text;
 
 namespace BusinessLayer.Business
 {
-    public class Photos : IPhotos
+    public class Photos : JsonFromWeb, IPhotos
     {
+
+        const string url = "http://jsonplaceholder.typicode.com/photos";
         public List<Photo> GetPhotos()
         {
-            return null;
+            return base.Get<Photo>(url);
         }
     }
 }

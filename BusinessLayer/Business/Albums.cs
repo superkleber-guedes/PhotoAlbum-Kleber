@@ -1,16 +1,20 @@
 ﻿using BusinessLayer.Interfaces;
 using BusinessLayer.Models;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
+using System.IO;
+using System.Net;
 using System.Text;
 
 namespace BusinessLayer.Business
 {
-    public class Albums : IAlbums
+    public class Albums : JsonFromWeb, IAlbums
     {
-        public List<Models.Album> GetAlbums()
+        const string url = "http://jsonplaceholder.typicode.com/albums";
+        public List<Album> GetAlbums()
         {
-            return null;
+            return base.Get<Album>(url);
         }
     }
 }

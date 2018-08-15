@@ -18,7 +18,7 @@ namespace Tests
         {
             Photos photos = new Photos();
             var photoList = photos.GetPhotos();
-            Assert.IsNotNull(photoList); //failing
+            Assert.IsNotNull(photoList); 
             Assert.IsTrue(photoList.Count > 0);
         }
 
@@ -27,7 +27,7 @@ namespace Tests
         {
             Albums albums = new Albums();
             var albumList = albums.GetAlbums();
-            Assert.IsNotNull(albumList); //failing
+            Assert.IsNotNull(albumList); 
             Assert.IsTrue(albumList.Count > 0);
         }
 
